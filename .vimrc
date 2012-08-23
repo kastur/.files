@@ -4,6 +4,7 @@ filetype plugin indent on
 set hidden        " hides buffers instead of closing them, safe :e
 
 set number        " always show line numbers
+set ruler         " always show cursor position
 set nowrap        " don't wrap lines
 
 set tabstop=2     " a tab is two columns wide
