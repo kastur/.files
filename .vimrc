@@ -53,3 +53,14 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 " sudo write file
 cmap w!! w !sudo tee % >/dev/null
+
+
+" autocmds
+augroup vimrcEx
+  " Clear all autocmds in the group
+  autocmd!
+  autocmd FileType text,tex setlocal textwidth=78
+
+  " Don't syntax highlight markdown because it's often wrong
+  autocmd! FileType mkd setlocal syn=off
+augroup END
