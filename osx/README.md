@@ -29,5 +29,4 @@ Change hostname
 
 `scutil --set HostName "6b72"`
 
-
-
+Install Intellij, then import settings.jar (specify parent directory).
