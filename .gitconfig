@@ -3,3 +3,5 @@
 	email = kastur@gmail.com
 [color]
 	ui = true
+[core]
+	autocrlf = true

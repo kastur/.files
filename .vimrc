@@ -61,6 +61,7 @@ augroup vimrcEx
   " Clear all autocmds in the group
   autocmd!
   autocmd FileType text,tex setlocal textwidth=78
+  autocmd FileType text,tex setlocal tabstop=4
 
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
