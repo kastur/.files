@@ -1,7 +1,26 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export PS1='\[\e[1;31m\]------------------------------------------------------------------------------\[\e[0m\]\n[\W] \$ '
+echo '=RELOADED='
+
+function Z() {
+  source ~/.bashrc
+}
+function ZZ() {
+  vim ~/.bashrc
+  source ~/.bashrc
+}
+
+function set_title() {
+  PROMPT_COMMAND='echo -ne "${TTY}\\033]0;'"$@"'\007"'
+}
+
+function horiz_break() {
+  printf '_%.0s' $(eval echo {1..${COLUMNS}})
+}
+export PS1='\n\[\e[1;31m\]$(horiz_break)\[\e[0m\]\n[\W] \$ '
+#export PS1='$ '
+
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -62,3 +81,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+export PATH=~/bin:~/depot_tools:$PATH
+export USE_CCACHE=1
+export CCACHE_DIR=~/android/_ccache
+export JAVA_HOME=/usr/lib/jvm/java-6-oracle/

@@ -1,8 +1,19 @@
+set nocompatible
+set t_Co=16
 call pathogen#infect()
+set background=dark " dark | light "
 syntax on
+colorscheme solarized
+call togglebg#map("<F5>")
+
 filetype plugin indent on
+set notitle       " do not update title of terminal.
+                  "    prevents 'thanks for flying vim' title on exit
 set hidden        " hides buffers instead of closing them, safe :e
 
+set cursorline    " highlight current line
+set colorcolumn=80
+                  " ruler at 80chars
 set number        " always show line numbers
 set ruler         " always show cursor position
 set nowrap        " don't wrap lines
